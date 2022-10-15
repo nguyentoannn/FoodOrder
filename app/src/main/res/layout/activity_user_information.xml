@@ -2,145 +2,244 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_userInformation"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserInformationActivity"
     android:background="@drawable/user_information">
 
     <LinearLayout
+        android:id="@+id/form_userInformation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19">
 
         <LinearLayout
+            android:id="@+id/form_navbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
+                android:id="@+id/img_ui_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/icon_home" />
+                android:background="@drawable/icon_home"
+                android:contentDescription="@string/user_information_to_home"
+                tools:ignore="ImageContrastCheck" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/txt_ui_logout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="logout"
-                android:textColor="@color/white" />
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="end"
+                android:text="@string/logout"
+                android:textColor="@color/yellow"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:background="@drawable/icon_cancel" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:text="username"/>
-
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/white">
-
-            <TextView
+            android:id="@+id/form_avatar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit profile"
-                android:layout_marginEnd="30dp"
-            android:textColor="@color/black" />
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
 
-            <EditText
+            <ImageView
+                android:id="@+id/img_avatar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:text="buff" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/white">
+                android:layout_height="160dp"
+                android:background="@drawable/icon_cancel"
+                android:contentDescription="@string/avatar" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Edit profile"
-                android:layout_marginEnd="30dp"
-                android:textColor="@color/black" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:text="buff" />
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/txt_username"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/form_ui_01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/white">
+            android:layout_marginBottom="5dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/txt_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Edit profile"
-                android:layout_marginEnd="30dp"
-                android:textColor="@color/black" />
+                android:layout_marginEnd="52dp"
+                android:text="@string/name"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/txt_name_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autofillHints=""
                 android:background="@color/white"
-                android:text="buff" />
+                android:inputType="text"
+                android:text="@string/hint"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/form_ui_02"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/white">
+            android:layout_marginBottom="5dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/txt_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Edit profile"
                 android:layout_marginEnd="30dp"
-                android:textColor="@color/black" />
+                android:layout_marginStart="10dp"
+                android:text="@string/address"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/txt_address_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autofillHints=""
                 android:background="@color/white"
-                android:text="buff" />
+                android:inputType="textPostalAddress"
+                android:text="@string/hint"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/form_ui_03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="55dp"
+                android:layout_marginStart="10dp"
+                android:text="@string/email"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txt_email_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@color/white"
+                android:inputType="textEmailAddress"
+                android:text="@string/hint"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/form_ui_04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_phone"
+                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="47dp"
+                android:text="@string/phone"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txt_phone_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@color/white"
+                android:inputType="textPhonetic"
+                android:text="@string/hint"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,TextFields,TouchTargetSizeCheck" />
 
         </LinearLayout>
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/txt_edit"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit profile"
-            android:textColor="@color/white" />
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:text="@string/edit_profile"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="UseCompatTextViewDrawableXml"
+            app:drawableStartCompat="@drawable/icon_edit" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/txt_change"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Change password"
-            android:textColor="@color/white" />
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:text="@string/change_password"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/icon_key" />
 
     </LinearLayout>
 

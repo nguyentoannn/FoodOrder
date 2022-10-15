@@ -2,14 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_aboutUs"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AboutUsActivity"
     android:background="@drawable/about_us">
 
     <LinearLayout
+        android:id="@+id/form_aboutUs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,49 +21,75 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/txt_aboutUs_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="About us"
-            android:textColor="@color/white"
+            android:gravity="center"
+            android:text="@string/aboutUs_title"
+            android:textColor="@color/black"
             android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="center"/>
+            android:background="@color/cyan"
+            android:layout_marginBottom="30dp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="About us"
-            android:textColor="@color/white"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:text="@string/member_01"
+            android:textColor="@color/yellow"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="About us"
-            android:textColor="@color/white"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:text="@string/member_02"
+            android:textColor="@color/yellow"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="About us"
-            android:textColor="@color/white"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:text="@string/member_03"
+            android:textColor="@color/yellow"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="About us"
-            android:textColor="@color/white"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:text="@string/member_04"
+            android:textColor="@color/yellow"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/member_05"
+            android:textColor="@color/yellow"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_aboutUs_cancel"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/about_us_to_home"
+            android:background="@drawable/icon_close" />
 
     </LinearLayout>
 

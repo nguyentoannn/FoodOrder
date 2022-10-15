@@ -3,13 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/FoodOrder/app/src/main/res/drawable/icon_home.xml" value="0.176" />
+        <entry key="..\:/Android/FoodOrder/app/src/main/res/drawable/icon_key.xml" value="0.176" />
+        <entry key="..\:/Android/FoodOrder/app/src/main/res/drawable/icon_password.xml" value="0.176" />
+        <entry key="..\:/Android/FoodOrder/app/src/main/res/drawable/icon_phone.xml" value="0.176" />
+        <entry key="..\:/Android/FoodOrder/app/src/main/res/drawable/icon_user.xml" value="0.176" />
+        <entry key="..\:/Android/FoodOrder/app/src/main/res/drawable/icon_visible.xml" value="0.176" />
+        <entry key="..\:/Android/FoodOrder/app/src/main/res/drawable/radious.xml" value="0.176" />
         <entry key="..\:/Android/FoodOrder/app/src/main/res/layout/activity_about_us.xml" value="0.2" />
         <entry key="..\:/Android/FoodOrder/app/src/main/res/layout/activity_admin.xml" value="0.2" />
         <entry key="..\:/Android/FoodOrder/app/src/main/res/layout/activity_admin_search.xml" value="0.1859375" />
         <entry key="..\:/Android/FoodOrder/app/src/main/res/layout/activity_change_password.xml" value="0.2" />
         <entry key="..\:/Android/FoodOrder/app/src/main/res/layout/activity_forgot_password.xml" value="0.2" />
         <entry key="..\:/Android/FoodOrder/app/src/main/res/layout/activity_home.xml" value="0.2" />
-        <entry key="..\:/Android/FoodOrder/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Android/FoodOrder/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Android/FoodOrder/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Android/FoodOrder/app/src/main/res/layout/activity_product.xml" value="0.2" />
         <entry key="..\:/Android/FoodOrder/app/src/main/res/layout/activity_product_detail.xml" value="0.2" />

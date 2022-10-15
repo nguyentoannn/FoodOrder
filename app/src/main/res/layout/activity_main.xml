@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.17000002">
 
         <ImageView
-            android:id="@+id/iview_logo"
+            android:id="@+id/img_logo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
