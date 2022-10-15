@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">FoodOrder</string>
+    <string name="get_started">Get Started!</string>
+    <string name="img_logo">logo</string>
+    <string name="login_title">Login</string>
+    <string name="register_title">Register</string>
+    <string name="home_title">Home</string>
+    <string name="change_password_title">ChangePassword</string>
+    <string name="forgot_title">ForgotPassword</string>
+    <string name="user_title">UserInformation</string>
+    <string name="category_title">Category</string>
+    <string name="slide_title">Hot</string>
+    <string name="admin_title">Admin</string>
+
+
 </resources>
