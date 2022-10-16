@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/gray"
     android:id="@+id/layout_edit_product"
-    tools:context=".AdminEditProductActivity">
+    tools:context=".AdminDeleteProductActivity">
 
     <LinearLayout
         android:id="@+id/form_edit_product"
@@ -22,12 +22,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/txt_edit_title"
+            android:id="@+id/txt_delete_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:gravity="center"
-            android:text="@string/edit_upper"
+            android:text="@string/delete_upper"
             android:textColor="@color/lime"
             android:textSize="50sp"
             android:textStyle="bold"
@@ -78,18 +78,16 @@
                 android:textStyle="bold"
                 tools:ignore="TextContrastCheck" />
 
-            <EditText
-                android:id="@+id/txt_product_name_item"
+            <TextView
+                android:id="@+id/txt_product_name_value"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:background="@color/white"
-                android:hint="@string/product_name"
-                android:inputType="text"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/price"
+                android:textColor="@color/blue"
                 android:textSize="25sp"
-                tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
 
         </LinearLayout>
 
@@ -109,34 +107,33 @@
                 android:text="@string/price"
                 android:textSize="25sp"
                 android:textStyle="bold"
-                tools:ignore="TextContrastCheck,TextContrastCheck" />
+                tools:ignore="TextContrastCheck" />
 
-            <EditText
-                android:id="@+id/txt_product_price_item"
+            <TextView
+                android:id="@+id/txt_product_price_value"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:background="@color/white"
-                android:hint="@string/product_price"
-                android:inputType="numberDecimal"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/price"
+                android:textColor="@color/blue"
                 android:textSize="25sp"
-                tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
+
+
 
         </LinearLayout>
 
         <Button
-            android:id="@+id/btn_edit_product"
+            android:id="@+id/btn_delete_product"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/lime"
-            android:text="@string/edit"
-            android:textSize="20sp"
-            tools:ignore="TextContrastCheck" />
+            android:text="@string/delete"
+            android:backgroundTint="@color/red"
+            android:textSize="20sp"/>
 
         <Button
-            android:id="@+id/btn_product_cancel_edit"
+            android:id="@+id/btn_product_cancel_delete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/cancel"

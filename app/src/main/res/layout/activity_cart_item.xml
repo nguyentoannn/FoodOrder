@@ -73,18 +73,42 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/form_increment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
                 <Button
-                    android:id="@+id/btn_addToCart"
-                    android:layout_width="match_parent"
+                    android:id="@+id/subtract"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/red"
+                    android:text="@string/subtract"
+                    android:textColor="@color/white"
+                    tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/green"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:text="@string/add_to_cart"
-                    android:textColor="@color/light_white"
+                    android:text="@string/num_quantity"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+                    android:id="@+id/item_quantity"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"/>
+
+                <Button
+                    android:id="@+id/increase"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="@string/increase"
+                    android:textColor="@color/white"
+                    tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

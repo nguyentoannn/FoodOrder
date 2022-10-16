@@ -34,21 +34,38 @@
                 android:id="@+id/img_ui_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/icon_home"
+                android:background="@drawable/icon_light_home"
                 android:contentDescription="@string/user_information_to_home"
                 tools:ignore="ImageContrastCheck" />
 
             <TextView
-                android:id="@+id/txt_ui_logout"
-                android:layout_width="match_parent"
+                android:id="@+id/txt_ui_title"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="end"
-                android:text="@string/logout"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/user_information"
                 android:textColor="@color/yellow"
                 android:textSize="25sp"
+                android:background="@color/gray"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_ui_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/gray"
+                android:paddingStart="3dp"
+                android:paddingEnd="3dp"
+                android:text="@string/logout"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                tools:ignore="TextContrastCheck" />
 
         </LinearLayout>
 
@@ -61,11 +78,12 @@
             android:orientation="vertical"
             tools:ignore="UseCompoundDrawables">
 
-            <ImageView
+            <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/img_avatar"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:background="@drawable/icon_cancel"
+                android:src="@drawable/ic_home"
+                android:layout_marginBottom="10dp"
                 android:contentDescription="@string/avatar" />
 
             <TextView
@@ -74,7 +92,8 @@
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
                 android:text="@string/txt_username"
-                android:textColor="@color/white"
+                android:background="@color/silver"
+                android:textColor="@color/black"
                 android:textSize="30sp" />
 
         </LinearLayout>

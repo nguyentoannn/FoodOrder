@@ -5,17 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 
+public class CartItemActivity extends AppCompatActivity {
 
-public class ProductDetailActivity extends AppCompatActivity {
-
-    Button _addToCart;
+    Button _subtract, _increase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product_detail);
+        setContentView(R.layout.activity_cart_item);
 
-        _addToCart = findViewById(R.id.btn_addToCart);
+        _subtract = findViewById(R.id.subtract);
+        _increase = findViewById(R.id.increase);
 
     }
 }

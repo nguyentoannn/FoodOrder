@@ -1,39 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/layout_home"
     tools:context=".HomeActivity"
+    android:background="@color/cyan"
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/navbar_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/home"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:contentDescription="@string/home_title"
             android:background="@drawable/icon_home" />
 
         <TextView
+            android:id="@+id/txt_home_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/home_title"
+            android:layout_marginEnd="5dp"
             android:textColor="@color/black"
             android:textSize="32sp"
             android:textStyle="bold" />
 
         <SearchView
+            android:id="@+id/search_home"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
-            android:background="@color/silver"/>
+            android:layout_marginEnd="5dp"
+            android:background="@color/silver" />
 
         <Button
+            android:id="@+id/btn_toSignIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="5dp"
             android:text="@string/login_title" />
     </LinearLayout>
 
-</LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navbar_home" />
+
+    <LinearLayout
+        android:id="@+id/form_quick_access"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:gravity="center"
+        android:background="@color/silver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_main">
+
+        <ImageView
+            android:id="@+id/home_access"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="30dp"
+            android:contentDescription="@string/home_title"
+            android:background="@drawable/icon_home" />
+
+        <ImageView
+            android:id="@+id/home_to_product"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="30dp"
+            android:contentDescription="@string/product_title"
+            android:background="@drawable/icon_favorite" />
+
+        <ImageView
+            android:id="@+id/home_to_cart"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="30dp"
+            android:contentDescription="@string/cart_title"
+            android:background="@drawable/icon_cart" />
+
+        <ImageView
+            android:id="@+id/home_to_user_information"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/user_title"
+            android:background="@drawable/icon_user" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

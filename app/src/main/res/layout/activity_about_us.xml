@@ -15,6 +15,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:orientation="vertical"
+        android:background="@color/silver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +38,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/member_01"
-            android:textColor="@color/yellow"
+            android:textColor="@color/blue"
             android:textSize="20sp"
             android:layout_marginBottom="10dp"
             android:textStyle="bold" />
@@ -47,7 +48,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/member_02"
-            android:textColor="@color/yellow"
+            android:textColor="@color/blue"
             android:textSize="20sp"
             android:layout_marginBottom="10dp"
             android:textStyle="bold" />
@@ -57,7 +58,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/member_03"
-            android:textColor="@color/yellow"
+            android:textColor="@color/blue"
             android:textSize="20sp"
             android:layout_marginBottom="10dp"
             android:textStyle="bold" />
@@ -67,7 +68,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/member_04"
-            android:textColor="@color/yellow"
+            android:textColor="@color/blue"
             android:textSize="20sp"
             android:layout_marginBottom="10dp"
             android:textStyle="bold" />
@@ -77,19 +78,19 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/member_05"
-            android:textColor="@color/yellow"
+            android:textColor="@color/blue"
             android:textSize="20sp"
             android:layout_marginBottom="10dp"
             android:textStyle="bold" />
 
-        <ImageView
+        <com.mikhaellopez.circularimageview.CircularImageView
             android:id="@+id/img_aboutUs_cancel"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:contentDescription="@string/about_us_to_home"
-            android:background="@drawable/icon_close" />
+            android:src="@drawable/icon_cancel" />
 
     </LinearLayout>
 

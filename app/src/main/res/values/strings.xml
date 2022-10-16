@@ -70,6 +70,30 @@
     <string name="phone">Phone</string>
     <string name="edit_profile">Edit profile</string>
     <string name="change_password">Change password</string>
+    <string name="user_information">User Information</string>
+    <string name="product_to_home">product_to_home</string>
+    <string name="product_to_cart">product_to_cart</string>
+    <string name="price">Price</string>
+    <string name="image">Image</string>
+    <string name="edit">Edit</string>
+    <string name="cancel">Cancel</string>
+    <string name="product_image_description">product_image_description</string>
+    <string name="search_to_home">search_to_home</string>
+    <string name="delete">Delete</string>
+    <string name="create">Create</string>
+    <string name="create_upper">CREATE PRODUCT</string>
+    <string name="edit_upper">EDIT PRODUCT</string>
+    <string name="delete_upper">DELETE PRODUCT</string>
+    <string name="cart">cart</string>
+    <string name="back">back</string>
+    <string name="place_order">Place order</string>
+    <string name="total_price">Total: </string>
+    <string name="total_value">3000000 VND</string>
+    <string name="subtract">-</string>
+    <string name="num_quantity">0</string>
+    <string name="increase">+</string>
+    <string name="product_title">product_title</string>
+    <string name="cart_title">cart_title</string>
 
 
 </resources>

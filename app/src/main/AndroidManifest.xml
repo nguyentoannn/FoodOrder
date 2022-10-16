@@ -14,10 +14,13 @@
         android:theme="@style/Theme.FoodOrder"
         tools:targetApi="31">
         <activity
-            android:name=".AdminManagementActivity"
+            android:name=".CartItemActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminChangePasswordActivity"
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminDeleteProductActivity"
             android:exported="false" />
         <activity
             android:name=".AdminSearchActivity"
@@ -30,9 +33,6 @@
             android:exported="false" />
         <activity
             android:name=".ProductActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EditProductActivity"
             android:exported="false" />
         <activity
             android:name=".AdminCreateProductActivity"
