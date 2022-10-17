@@ -1,4 +1,127 @@
 package com.example.foodorder;
 
-public class FoodDBManagement {
+import android.annotation.SuppressLint;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class FoodDBManagement extends SQLiteOpenHelper {
+
+    public static final String DB_Name = "OrderDB";
+
+    public FoodDBManagement(Context ctx) {
+        super(ctx, DB_Name, null, 1);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE Users(username TEXT primary key, fullName TEXT NOT NULL, password TEXT NOT NULL, confirmPassword TEXT NOT NULL, address TEXT NOT NULL, email TEXT NOT NULL UNIQUE, phone TEXT NOT NULL UNIQUE, role TEXT NOT NULL)");
+        db.execSQL(""); // set constraints column role
+        db.execSQL("CREATE TABLE Products(productId TEXT primary key, productName TEXT NOT NULL, categoryId TEXT NOT NULL, productQuantiy INT NOT NULL, productPrice LONG NOT NULL)");
+        db.execSQL("CREATE TABLE Categories(categoryId TEXT primary key, categoryName TEXT NOT NULL)");
+        db.execSQL("");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS Users");
+        db.execSQL("DROP TABLE IF EXISTS Products");
+        db.execSQL("DROP TABLE IF EXISTS Categories");
+
+    }
+
+    public Boolean addUser(String username, String fullName, String password, String confirmPassword, String address, String email, String phone){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("username", username);
+        values.put("fullName", fullName);
+        values.put("password", password);
+        values.put("confirmPassword", confirmPassword);
+        values.put("address", address);
+        values.put("email", email);
+        values.put("phone", phone);
+        long result = db.insert("Users", null, values);
+        return result != -1;
+    }
+
+    public Boolean checkDuplicateUser(String username){
+        SQLiteDatabase db = this.getWritableDatabase();
+        @SuppressLint("Recycle") Cursor cursor = db.rawQuery("SELECT * FROM Users WHERE username=?", new String[]{username});
+        return cursor.getCount() > 0;
+    }
+
+    public Boolean checkLogin(String username, String password){
+        SQLiteDatabase db = this.getWritableDatabase();
+        @SuppressLint("Recycle") Cursor cursor = db.rawQuery("SELECT * FROM Users WHERE username=? and password=?", new String[]{username, password});
+        return cursor.getCount() > 0;
+    }
+
+    public Boolean addProduct(String productId, String productName, String categoryId, int productQuantity, long productPrice){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("productId", productId);
+        values.put("productName", productName);
+        values.put("categoryId", categoryId);
+        values.put("productQuantity", productQuantity);
+        values.put("productPrice", productPrice);
+        long result = db.insert("Products", null, values);
+        return result != -1;
+    }
+
+    public Boolean removeProduct(String productId){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long rm = db.delete("Products", "productId=?", new String[]{productId});
+        return rm != -1;
+    }
+
+    public Boolean updateProduct(String productId, String productName, String categoryId, int productQuantity, long productPrice){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("productName", productName);
+        values.put("categoryId", categoryId);
+        values.put("productQuantity", productQuantity);
+        values.put("productPrice", productPrice);
+        long result = db.update("Products", values, "productId=?", new String[]{productId});
+        return result != -1;
+    }
+
+    public Boolean checkDuplicateProduct(String productId, int productQuantity){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        @SuppressLint("Recycle") Cursor cursor = db.rawQuery("SELECT * FROM Products WHERE productId=?", new String[]{productId, String.valueOf(productQuantity)});
+        if(cursor.getCount() > 0){
+            int newQuantity = cursor.getInt(productQuantity) + productQuantity;
+            values.put("productQuantity", newQuantity);
+            long result = db.update("Products", values, "productId=?", new String[]{productId, String.valueOf(productQuantity)});
+            return result != -1;
+        }else{
+            return false;
+        }
+    }
+
+    public Boolean addCategory(String categoryId, String categoryName){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("categoryId", categoryId);
+        values.put("categoryName", categoryName);
+        long result = db.insert("Categories", null, values);
+        return result != -1;
+    }
+
+    public Boolean updateCategory(String categoryId, String categoryName){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("categoryName", categoryName);
+        long result = db.update("Categories", values, "categoryId=?", new String[]{categoryId});
+        return result != -1;
+    }
+
+    public Boolean removeCategory(String categoryId){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long rm = db.delete("Categories", "categoryId=?", new String[]{categoryId});
+        return rm != -1;
+    }
+
 }

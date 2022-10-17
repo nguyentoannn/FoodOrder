@@ -2,9 +2,11 @@ package com.example.foodorder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class UserInformationActivity extends AppCompatActivity {
 
@@ -24,6 +26,13 @@ public class UserInformationActivity extends AppCompatActivity {
         _edit = findViewById(R.id.txt_edit);
         _change = findViewById(R.id.txt_change);
         _home = findViewById(R.id.img_ui_cancel);
+
+
+        _logout.setOnClickListener(v -> {
+            startActivity(new Intent(UserInformationActivity.this, HomeActivity.class));
+            finish();
+            Toast.makeText(UserInformationActivity.this, "Logout Successfully", Toast.LENGTH_SHORT).show();
+        });
 
     }
 }
