@@ -13,14 +13,18 @@ public class FoodDBManagement extends SQLiteOpenHelper {
 
     public FoodDBManagement(Context ctx) {
         super(ctx, DB_Name, null, 1);
+        //DROP DATABASE
+        //ctx.deleteDatabase(DB_Name);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE Users(username TEXT primary key, fullName TEXT NOT NULL, password TEXT NOT NULL, confirmPassword TEXT NOT NULL, address TEXT NOT NULL, email TEXT NOT NULL UNIQUE, phone TEXT NOT NULL UNIQUE, role TEXT NOT NULL)");
-        db.execSQL(""); // set constraints column role
-        db.execSQL("CREATE TABLE Products(productId TEXT primary key, productName TEXT NOT NULL, categoryId TEXT NOT NULL, productQuantiy INT NOT NULL, productPrice LONG NOT NULL)");
-        db.execSQL("CREATE TABLE Categories(categoryId TEXT primary key, categoryName TEXT NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Users(username TEXT primary key, fullName TEXT NOT NULL, password TEXT NOT NULL, confirmPassword TEXT NOT NULL, address TEXT NOT NULL, email TEXT NOT NULL UNIQUE, phone TEXT NOT NULL UNIQUE, role TEXT NOT NULL DEFAULT 'user')");
+        String createAdmin = "INSERT INTO Users (username, fullName, password, confirmPassword, address, email, phone, role) \n" +
+                "VALUES ('admin','Nguyen Toan', '123456', '123456', 'vietnam', 'nguyenvantoan28082001@gmail.com', '0762871115', 'admin')";
+        db.execSQL(createAdmin);
+        db.execSQL("CREATE TABLE IF NOT EXISTS Products(productId TEXT primary key, productName TEXT NOT NULL, categoryId TEXT NOT NULL, productQuantiy INT NOT NULL, productPrice LONG NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Categories(categoryId TEXT primary key, categoryName TEXT NOT NULL)");
         db.execSQL("");
     }
 

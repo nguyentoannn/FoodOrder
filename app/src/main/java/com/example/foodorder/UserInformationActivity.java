@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.login.LoginManager;
+
 public class UserInformationActivity extends AppCompatActivity {
 
     TextView _name, _address, _email, _phone, _logout, _edit, _change;
@@ -27,12 +29,15 @@ public class UserInformationActivity extends AppCompatActivity {
         _change = findViewById(R.id.txt_change);
         _home = findViewById(R.id.img_ui_cancel);
 
+        _home.setOnClickListener(v -> startActivity(new Intent(UserInformationActivity.this, HomeActivity.class)));
 
         _logout.setOnClickListener(v -> {
+            LoginManager.getInstance().logOut();
             startActivity(new Intent(UserInformationActivity.this, HomeActivity.class));
             finish();
             Toast.makeText(UserInformationActivity.this, "Logout Successfully", Toast.LENGTH_SHORT).show();
         });
 
+        _change.setOnClickListener(v -> startActivity(new Intent(UserInformationActivity.this, ChangePasswordActivity.class)));
     }
 }

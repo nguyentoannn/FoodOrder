@@ -2,6 +2,7 @@ package com.example.foodorder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -24,6 +25,8 @@ public class HomeActivity extends AppCompatActivity {
         _user = findViewById(R.id.home_to_user_information);
         _toLogin = findViewById(R.id.btn_toSignIn);
         _search = findViewById(R.id.search_home);
+
+        _toLogin.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, LoginActivity.class)));
 
     }
 }
